@@ -1,19 +1,20 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Models\Category;
+use App\Models\Table;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-class CategoryController extends Controller
+class TableController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $categories = Category::all();
-        return view('admin.categories.index', compact('categories'));
+        $tables = Table::all();
+        return view('admin.tables.index', compact('tables'));
     }
 
     /**
@@ -21,7 +22,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('admin.categories.create');
+        return view('admin.tables.create');
     }
 
     /**
@@ -29,6 +30,7 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
+        //
     }
 
     /**
@@ -36,6 +38,7 @@ class CategoryController extends Controller
      */
     public function show(string $id)
     {
+        //
     }
 
     /**
@@ -43,6 +46,7 @@ class CategoryController extends Controller
      */
     public function edit(string $id)
     {
+        //
     }
 
     /**
@@ -50,6 +54,7 @@ class CategoryController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        //
     }
 
     /**
@@ -57,5 +62,6 @@ class CategoryController extends Controller
      */
     public function destroy(string $id)
     {
+        //
     }
 }

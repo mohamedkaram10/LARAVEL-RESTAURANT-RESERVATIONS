@@ -1,19 +1,20 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Models\Menu;
+use App\Models\Reservation;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-class MenuController extends Controller
+class ReservationController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $menus = Menu::all();
-        return view('admin.menus.index', compact('menus'));
+        $reservations = Reservation::all();
+        return view('admin.reservations.index', compact('reservations'));
     }
 
     /**
@@ -21,7 +22,7 @@ class MenuController extends Controller
      */
     public function create()
     {
-        return view('admin.menus.create');
+        return view('admin.reservations.create');
     }
 
     /**

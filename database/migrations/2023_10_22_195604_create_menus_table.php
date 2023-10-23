@@ -13,9 +13,9 @@ return new class() extends Migration {
         Schema::create('menus', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('guest_number');
-            $table->string('status')->default('avaliable');
-            $table->string('location');
+            $table->text('description');
+            $table->string('image');
+            $table->decimal('price', 10, 2);
             $table->timestamps();
         });
     }
