@@ -1,12 +1,13 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\Admin\MenuController;
 use App\Http\Controllers\Admin\AdminController;
-use App\Http\Controllers\Admin\TableController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\MenuController;
 use App\Http\Controllers\Admin\ReservationController;
+use App\Http\Controllers\Admin\TableController;
+use App\Http\Controllers\FatoorahController;
+use App\Http\Controllers\ProfileController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,6 +40,10 @@ Route::middleware(['auth', 'admin'])->name('admin.')->prefix('admin')->group(fun
     Route::resource('/menus', MenuController::class);
     Route::resource('/tables', TableController::class);
     Route::resource('/reservations', ReservationController::class);
+
+    // For Testing Payment MyFatoorah
+    Route::get('myfatoorah', [FatoorahController::class, 'checkout'])->name('myfatoorah');
+    Route::get('callback', [FatoorahController::class, 'callback'])->name('myfatoorah.callback');
 });
 
 require __DIR__.'/auth.php';

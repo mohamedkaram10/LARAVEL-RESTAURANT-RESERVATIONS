@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FatoorahController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+// For Testing Payment MyFatoorah
+Route::post('myfatoorah', [FatoorahController::class, 'checkout'])->name('myfatoorah');
+Route::get('callback', [FatoorahController::class, 'callback'])->name('myfatoorah.callback');
